@@ -51,11 +51,12 @@
                 <tbody>
                     <tr *ngFor="let user of UsersData">
                         <th scope="row">{{user.id}}</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <td>{{user.Name}}</td>
+                        <td>{{user.Mobile}}</td>
+                        <td>{{user.Email}}</td>
+                        <td>{{user.Age}}</td>
                         <td>
+                            <button class="btn btn-primary" (click)="getUserById(user.id)"> Edit</button>
                             <button class="btn btn-danger" (click)="deleteUserById(user.id)"> Delete</button>
                         </td>
                     </tr>

@@ -21,6 +21,10 @@ export class CommonService {
 
   deleteUserById(id:any): Observable<any>{
     return this.http.delete(this.url +"Users/"+id)
+  } 
+
+  getUserById(id:any):Observable<any>{
+    return this.http.get(this.url+"Users/"+id);
   }
 
 }

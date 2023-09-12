@@ -8,18 +8,25 @@
   ],
   "Users": [
     {
-      "Name": "muzaffar",
-      "Email": "muz",
-      "Mobile": "9985268083",
-      "Age": "22",
-      "id": 2
-    },
-    {
       "Name": "Afsar ",
       "Email": "afsar.zan@gmail.com",
       "Mobile": "9966710247",
       "Age": "33",
       "id": 3
+    },
+    {
+      "Name": "Muzaffar",
+      "Email": "muzaffarahmed4u@gmail.com",
+      "Mobile": "9985268083",
+      "Age": "35",
+      "id": 4
+    },
+    {
+      "Name": "Shaz",
+      "Email": "shaz@m.com",
+      "Mobile": "779955",
+      "Age": "32",
+      "id": 5
     }
   ],
   "profile": {

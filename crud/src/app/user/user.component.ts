@@ -30,6 +30,7 @@ export class UserComponent {
     this.service.AddUpdateUser(this.userForm.value).subscribe( data =>{ 
       this.userForm.reset();
       // this.UsersData = data;
+      this.getAllUsers()
     })
   }
 
@@ -47,6 +48,18 @@ export class UserComponent {
     })
   }
 
+  getUserById(id:any){
+    this.service.getUserById(id).subscribe((data)=> {
+      console.log(data);
+      this.userForm.patchValue({
+        Name : data.Name,
+        Email : data.Email,
+        Mobile: data.Mobile,
+        Age: data.Age
+      })
+      this.getAllUsers()
+    })
+  }
 
 
 
