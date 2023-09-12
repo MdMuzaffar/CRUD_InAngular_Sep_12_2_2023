@@ -1,14 +1,68 @@
 <div class="container mt-2">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tablist" aria-controls="home" aria-selected="true">Add User</a>
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add User</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tablist" aria-controls="profile" aria-selected="false">User List</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">User List</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Add User</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">User List</div>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+                <div class="row d-flex mt-2">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Name</label>
+                        <input type="text" class="form-control" formControlName="Name" id="formGroupExampleInput" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput2">Mobile Number</label>
+                        <input type="text" class="form-control" formControlName="Mobile" id="formGroupExampleInput2" placeholder="Enter Mobile Number">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Email</label>
+                        <input type="text" class="form-control" formControlName="Email" id="formGroupExampleInput" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput2">Age</label>
+                        <input type="text" class="form-control" formControlName="Age" id="formGroupExampleInput2" placeholder="Enter Age">
+                    </div>
+                </div>
+                <div class="float-right ">
+                    <button type="submit" class="btn btn-primary m-2">Add</button>
+                    <button type="button" class="btn btn-danger m-2">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of UsersData">
+                        <th scope="row">{{user.id}}</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteUserById(user.id)"> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
     </div>
-</div>

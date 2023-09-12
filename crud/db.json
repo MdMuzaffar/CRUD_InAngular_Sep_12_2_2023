@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Users": [
+    {
+      "Name": "muzaffar",
+      "Email": "muz",
+      "Mobile": "9985268083",
+      "Age": "22",
+      "id": 2
+    },
+    {
+      "Name": "Afsar ",
+      "Email": "afsar.zan@gmail.com",
+      "Mobile": "9966710247",
+      "Age": "33",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
