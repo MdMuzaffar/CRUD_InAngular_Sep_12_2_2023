@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CommonService } from '../common.service';
-
+declare var $ : any;
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -26,8 +26,14 @@ export class UserComponent {
   }
 
   submitForm(){
+    var type = this.userForm.id == null? 'Add' : 'Update'
     console.log(this.userForm.value)
-    this.service.AddUpdateUser(this.userForm.value).subscribe( data =>{ 
+    this.service.AddUpdateUser(this.userForm.value,type).subscribe( data =>{
+      if(type == 'Add'){
+        alert('Added')
+      } else{
+        alert('Updated')
+      }
       this.userForm.reset();
       // this.UsersData = data;
       this.getAllUsers()
@@ -51,13 +57,18 @@ export class UserComponent {
   getUserById(id:any){
     this.service.getUserById(id).subscribe((data)=> {
       console.log(data);
+      $("#home").addClass('show');
+      $("#home").addClass('active');
+
+      $("#profile").removeClass('show');
+      $("#profile").removeClass('active');
       this.userForm.patchValue({
         Name : data.Name,
         Email : data.Email,
         Mobile: data.Mobile,
         Age: data.Age
       })
-      this.getAllUsers()
+      // this.getAllUsers()
     })
   }
 
