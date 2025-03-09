@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularPracticeComponent } from './user/AngularPractice/angular-practice/angular-practice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    AngularPracticeComponent
   ],
   imports: [
     BrowserModule,

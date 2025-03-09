@@ -1,0 +1,19 @@
+<p>angular-practice works!</p>
+
+<div *ngIf="course.length > 0">
+    <h3>Courses are left</h3>
+</div>
+<div *ngIf="course.length == 0">
+    <h3>No Courses are left</h3>
+</div>
+
+<div *ngIf="course.length > 0 ? then courseList else noCourses"> </div>
+<ng-template #courseList>
+    Courses are available
+</ng-template>
+<ng-template #noCourses>
+    Courses are not available
+</ng-template>
+
+// ng-switch case (Property Binding)
+
