@@ -1,5 +1,5 @@
 <p>angular-practice works!</p>
-
+<!-- 
 <div *ngIf="course.length > 0">
     <h3>Courses are left</h3>
 </div>
@@ -13,7 +13,19 @@
 </ng-template>
 <ng-template #noCourses>
     Courses are not available
-</ng-template>
+</ng-template> -->
 
 // ng-switch case (Property Binding)
 
+
+// [ngClass] using
+<div>
+    <input type="text" [(ngModel)]="searchText">
+    <button [ngClass]="{'btn': true, 'btn-search': searchText, 'btn-disable': !searchText}" [disabled]="!searchText">
+        Search
+    </button>
+</div>
+
+<div>
+    <p *ngIf="searchText !== ''"> <strong>Searching For:</strong> {{ searchText }}</p>
+</div>
